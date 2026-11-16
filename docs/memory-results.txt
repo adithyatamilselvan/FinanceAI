@@ -1,0 +1,34 @@
+python + psutil baseline                                27.3 MB
+after importing FastAPI app (startup footprint)         74.9 MB
+after /health                                           80.6 MB
+after DB connection (/ready)                            80.7 MB
+after register (argon2 hash)                            80.4 MB
+CSV import of 5000 rows: (5000, 5000)
+after CSV import (5000 rows, preview+commit)           121.7 MB
+XLSX import of 5000 rows: (5000, 5000)
+after XLSX import (5000 rows, preview+commit)          133.1 MB
+after monthly analytics (dashboard)                    133.1 MB
+after category trends                                  133.1 MB
+after anomaly detection                                134.1 MB
+after forecast                                         134.5 MB
+after recurring detection                              134.8 MB
+optimization status: 201
+after budget optimisation (SciPy)                      154.7 MB
+simulation status: 200
+after what-if simulation (360 months + loan)           154.9 MB
+pdf bytes: 3059
+after PDF report                                       163.0 MB
+csv export bytes: 671826
+after CSV export (10000 rows)                          160.1 MB
+xlsx export bytes: 315450
+after Excel export (10000 rows)                        160.1 MB
+after 15 repeated request rounds, pass 1 (leak check)   171.0 MB
+   growth in pass 1: +10.8 MB  (pass 1 includes one-off lazy module loads; a leak would keep growing)
+after 15 repeated request rounds, pass 2 (leak check)   171.0 MB
+   growth in pass 2: +0.0 MB  (pass 1 includes one-off lazy module loads; a leak would keep growing)
+after 15 repeated request rounds, pass 3 (leak check)   170.9 MB
+   growth in pass 3: -0.1 MB  (pass 1 includes one-off lazy module loads; a leak would keep growing)
+after 5 duplicate 5000-row previews (leak check)       174.9 MB
+growth over 5 duplicate previews: +4.0 MB
+
+PEAK RSS observed: 174.9 MB (Cloud Run limit configured: 2048 MB; Render's old limit: 512 MB)

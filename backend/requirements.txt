@@ -1,0 +1,19 @@
+# Runtime dependencies only. No PyTorch / TensorFlow / sentence-transformers / LangChain / Celery / Redis.
+fastapi==0.163.1
+uvicorn==0.54.0
+pydantic==2.14.3
+pydantic-settings==2.16.3
+pymongo==4.20.0
+pandas==3.1.1
+numpy==2.4.6
+openpyxl==3.1.5
+python-multipart==0.0.34
+scipy==1.17.1
+reportlab==5.1.0
+argon2-cffi==25.1.0
+PyJWT==2.15.1
+email-validator==2.4.0
+# Payment-slip OCR (local, free). Tesseract itself is a system package: apt in the Dockerfile, installer on Windows.
+pymupdf==1.26.7
+pytesseract==0.3.13
+pillow==13.0.0

@@ -1,0 +1,154 @@
+{
+  "slip_01_phonepe_swiggy.png": {
+    "date": "2026-10-12",
+    "time": "19:45",
+    "amount": 48600,
+    "currency": "INR",
+    "type": "expense",
+    "merchant": "SWIGGY",
+    "sender": null,
+    "payment_method": "UPI",
+    "reference": "628812345678",
+    "provider": "PhonePe",
+    "status": "successful"
+  },
+  "slip_02_gpay_bigbasket.jpg": {
+    "date": "2026-10-15",
+    "time": "18:12",
+    "amount": 234050,
+    "currency": "INR",
+    "type": "expense",
+    "merchant": "BIGBASKET",
+    "sender": null,
+    "payment_method": "UPI",
+    "reference": "529814327654",
+    "provider": "Google Pay",
+    "status": "successful"
+  },
+  "slip_03_paytm_received.jpeg": {
+    "date": "2026-10-18",
+    "time": "11:20",
+    "amount": 150000,
+    "currency": "INR",
+    "type": "income",
+    "merchant": null,
+    "sender": "Rahul Verma",
+    "payment_method": "UPI",
+    "reference": "530198877665",
+    "provider": "Paytm",
+    "status": "successful"
+  },
+  "slip_04_neft_landlord.pdf": {
+    "date": "2026-10-03",
+    "time": "10:05",
+    "amount": 2200000,
+    "currency": "INR",
+    "type": "expense",
+    "merchant": "LANDLORD R KUMAR",
+    "sender": null,
+    "payment_method": "Bank transfer",
+    "reference": "ICIC26100312345678",
+    "provider": "ICICI Bank",
+    "status": "successful"
+  },
+  "slip_05_card_apollo.jpg": {
+    "date": "2026-10-08",
+    "time": "14:32",
+    "amount": 84200,
+    "currency": "INR",
+    "type": "expense",
+    "merchant": "APOLLO PHARMACY",
+    "sender": null,
+    "payment_method": "Card",
+    "reference": "628455512345",
+    "provider": null,
+    "status": "successful"
+  },
+  "slip_06_bescom_scanned.pdf": {
+    "date": "2026-10-10",
+    "time": null,
+    "amount": 184000,
+    "currency": "INR",
+    "type": "expense",
+    "merchant": "BESCOM",
+    "sender": null,
+    "payment_method": "UPI",
+    "reference": "BES2610100099871",
+    "provider": null,
+    "status": "successful"
+  },
+  "slip_07_cash_kirana.png": {
+    "date": "2026-10-14",
+    "time": null,
+    "amount": 31000,
+    "currency": "INR",
+    "type": "expense",
+    "merchant": "SRI LAKSHMI KIRANA STORE",
+    "sender": null,
+    "payment_method": "Cash",
+    "reference": null,
+    "provider": null,
+    "status": "successful"
+  },
+  "slip_08_failed_actfibernet.png": {
+    "date": "2026-10-16",
+    "time": "09:10",
+    "amount": 99900,
+    "currency": "INR",
+    "type": "expense",
+    "merchant": "ACT FIBERNET",
+    "sender": null,
+    "payment_method": "UPI",
+    "reference": "T2610160910999888777",
+    "provider": "PhonePe",
+    "status": "failed"
+  },
+  "slip_09_pending_zomato.jpg": {
+    "date": "2026-10-20",
+    "time": "20:25",
+    "amount": 75000,
+    "currency": "INR",
+    "type": "expense",
+    "merchant": "ZOMATO",
+    "sender": null,
+    "payment_method": "UPI",
+    "reference": "20261020082598",
+    "provider": "Paytm",
+    "status": "pending"
+  },
+  "slip_10_refund_amazon.png": {
+    "date": "2026-10-22",
+    "time": "15:40",
+    "amount": 129900,
+    "currency": "INR",
+    "type": "refund",
+    "merchant": "AMAZON",
+    "sender": null,
+    "payment_method": null,
+    "reference": "RF2610221540123",
+    "provider": "HDFC Bank",
+    "status": "refunded"
+  },
+  "edge-cases/edge_missing_date.png": {
+    "date": null,
+    "amount": 22000,
+    "status": "successful"
+  },
+  "edge-cases/edge_missing_amount.png": {
+    "date": "2026-10-12",
+    "amount": null,
+    "status": "successful"
+  },
+  "edge-cases/edge_blurry_noisy.jpg": {
+    "date": "2026-10-19",
+    "amount": 315075,
+    "status": "successful",
+    "note": "degraded on purpose: must be flagged for review, never silently trusted"
+  },
+  "edge-cases/edge_blank.png": {
+    "note": "no text at all"
+  },
+  "edge-cases/edge_not_a_slip.png": {
+    "note": "text but no transaction"
+  }
+}

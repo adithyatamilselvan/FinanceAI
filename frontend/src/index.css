@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------------------------------------
+   FinanceAI design tokens
+   Everything visual hangs off these variables, so light and dark themes (and any future re-brand) are one edit.
+   Tailwind's own colour variables are remapped here, so existing utility classes (bg-blue-600, text-slate-500 ...)
+   automatically follow the palette and the theme.
+   ------------------------------------------------------------------------------------------------ */
+@theme {
+  /* Typography: system UI stack (no web-font download, ₹0 budget, fast first paint) */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+  /* Radius scale */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  /* Elevation: subtle, never heavy */
+  --shadow-xs: 0 1px 1px 0 rgb(15 23 42 / 0.04);
+  --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.05), 0 1px 3px 0 rgb(15 23 42 / 0.04);
+  --shadow-md: 0 4px 12px -2px rgb(15 23 42 / 0.08), 0 2px 4px -2px rgb(15 23 42 / 0.05);
+  --shadow-xl: 0 20px 40px -12px rgb(15 23 42 / 0.25);
+
+  /* Solid button fills (white text on top, so these stay dark enough in both themes) */
+  --color-brand: #2459d6;
+  --color-brand-hover: #1c47b0;
+  --color-danger: #d12f35;
+  --color-danger-hover: #b4232a;
+
+  /* Surfaces. `bg-surface` = cards / inputs / sidebar. Page background is slate-50. */
+  --color-surface: #ffffff;
+
+  /* Primary (brand): a calm, trustworthy blue */
+  --color-blue-50: #eff5ff;
+  --color-blue-100: #dbe8ff;
+  --color-blue-200: #bcd3ff;
+  --color-blue-300: #8fb3fb;
+  --color-blue-400: #5f8df4;
+  --color-blue-500: #3b6fe8;
+  --color-blue-600: #2459d6;
+  --color-blue-700: #1c47b0;
+  --color-blue-800: #1b3b8a;
+  --color-blue-900: #1b3270;
+
+  /* Neutral text / border scale (cool slate) */
+  --color-slate-50: #f6f8fb;
+  --color-slate-100: #eef1f6;
+  --color-slate-200: #e1e6ee;
+  --color-slate-300: #cbd3df;
+  --color-slate-400: #94a0b4;
+  --color-slate-500: #5f6b80;
+  --color-slate-600: #4a5568;
+  --color-slate-700: #364152;
+  --color-slate-800: #1f2937;
+  --color-slate-900: #0f172a;
+
+  /* Semantic states (positive = green, negative = red, caution = amber). 700 shades meet WCAG AA on white. */
+  --color-green-50: #ecfdf3;
+  --color-green-200: #b4ecc9;
+  --color-green-600: #168a4a;
+  --color-green-700: #11703c;
+  --color-green-900: #0f4a2b;
+  --color-red-50: #fef2f2;
+  --color-red-200: #fbcaca;
+  --color-red-500: #e5484d;
+  --color-red-600: #d12f35;
+  --color-red-700: #b4232a;
+  --color-red-800: #8f1d23;
+  --color-amber-50: #fffaeb;
+  --color-amber-200: #fbe1a0;
+  --color-amber-500: #e09a0b;
+  --color-amber-700: #9a5b04;
+  --color-amber-900: #6b3f06;
+}
+
+/* Dark theme: same variables, different values. Toggled by the `dark` class on <html> (see lib/theme.ts). */
+.dark {
+  color-scheme: dark;
+  --color-surface: #131b2e;
+
+  --color-blue-50: #16264a;
+  --color-blue-100: #1c3163;
+  --color-blue-200: #2a4688;
+  --color-blue-300: #3a5fb4;
+  --color-blue-400: #5f8df4;
+  --color-blue-500: #6f9bff;
+  --color-blue-600: #3d6df0;   /* buttons: white text stays readable */
+  --color-blue-700: #8fb3ff;   /* links / active text on dark */
+  --color-blue-800: #b3ccff;
+  --color-blue-900: #d3e1ff;
+
+  --color-slate-50: #0b1120;   /* page background */
+  --color-slate-100: #1a2440;
+  --color-slate-200: #263150;
+  --color-slate-300: #36446a;
+  --color-slate-400: #6c7a9c;
+  --color-slate-500: #98a4c0;
+  --color-slate-600: #aeb8d0;
+  --color-slate-700: #c4cce0;
+  --color-slate-800: #dbe1f0;
+  --color-slate-900: #eef1f9;
+
+  --color-green-50: #0e2a1e;
+  --color-green-200: #1e5a3d;
+  --color-green-600: #4fd08b;
+  --color-green-700: #5fdc98;
+  --color-green-900: #b4f2d0;
+  --color-red-50: #2e1519;
+  --color-red-200: #6b2630;
+  --color-red-500: #f06a70;
+  --color-red-600: #f47f84;
+  --color-red-700: #ff9096;
+  --color-red-800: #ffc0c3;
+  --color-amber-50: #2c2210;
+  --color-amber-200: #6b4f12;
+  --color-amber-500: #f0b13c;
+  --color-amber-700: #f6c565;
+  --color-amber-900: #fbe3b0;
+
+  --color-brand: #3562e6;
+  --color-brand-hover: #2a52cc;
+  --color-danger: #c8333a;
+  --color-danger-hover: #ad2a31;
+
+  --shadow-xs: none;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.35);
+  --shadow-md: 0 6px 16px -4px rgb(0 0 0 / 0.5);
+}
+
+:root { color-scheme: light; }
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+  font-feature-settings: "cv11", "ss01";
+  overflow-x: hidden; /* no horizontal page scroll at any width; tables scroll inside their own container */
+}
+
+/* Money and counts line up in columns */
+table, .num { font-variant-numeric: tabular-nums; }
+
+/* Visible, consistent keyboard focus */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-blue-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Subtle, purposeful motion only; disabled for people who ask for less motion */
+@keyframes fa-fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes fa-pulse { 50% { opacity: 0.55; } }
+.fa-fade-in { animation: fa-fade 160ms ease-out; }
+.fa-skeleton { animation: fa-pulse 1.4s ease-in-out infinite; background: var(--color-slate-200); border-radius: var(--radius-md); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* Recharts follows the theme (its SVG defaults are hard-coded greys) */
+.recharts-cartesian-grid line { stroke: var(--color-slate-200); }
+.recharts-cartesian-axis-line, .recharts-cartesian-axis-tick-line { stroke: var(--color-slate-300); }
+.recharts-text, .recharts-cartesian-axis-tick-value { fill: var(--color-slate-500); }
+.recharts-legend-item-text { color: var(--color-slate-700) !important; }
+.recharts-default-tooltip {
+  background-color: var(--color-surface) !important;
+  border: 1px solid var(--color-slate-200) !important;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+.recharts-tooltip-label { color: var(--color-slate-900) !important; font-weight: 600; }
+.recharts-tooltip-item { color: var(--color-slate-700) !important; }
+.recharts-tooltip-cursor { fill: color-mix(in srgb, var(--color-slate-400) 14%, transparent); stroke: var(--color-slate-300); }
+
+/* Native form controls pick up the theme (checkbox / radio / date picker icons) */
+input[type="checkbox"], input[type="radio"] { accent-color: var(--color-blue-600); }
+::selection { background: color-mix(in srgb, var(--color-blue-500) 30%, transparent); }
+
+/* Scroll containers must contain absolutely positioned children (e.g. `sr-only` header text in a wide table),
+   otherwise those children escape the clipping box and silently widen the whole page. */
+.overflow-x-auto:not(.fixed, .absolute, .sticky), .overflow-auto:not(.fixed, .absolute, .sticky) { position: relative; }
+
+/* Modal: never taller than 90% of the visible viewport (dvh follows mobile browser toolbars; vh is the fallback). */
+.modal-panel { max-height: 90vh; max-height: 90dvh; }
+/* Action row that stays visible at the bottom of a scrolling modal body. */
+.modal-footer { position: sticky; bottom: -1.25rem; /* cancels the scroller's bottom padding: sticky offsets are measured from its content box */  z-index: 1; margin: 1rem -1.25rem -1.25rem; padding: 0.75rem 1.25rem; background: var(--color-surface); border-top: 1px solid var(--color-slate-200); }

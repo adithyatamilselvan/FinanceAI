@@ -1,0 +1,7 @@
+app imported, before any OCR:               79.6 MB
+10-slip batch:   3.1 s total, 0.71 s slowest file, 0.31 s average
+after the batch (Python process only):     140.2 MB
+PEAK python + tesseract during batch:      182.2 MB
+5-page scanned A4 PDF (2.0 MB):   6.4 s, HTTP 200, ok=True, pages=5, error=None
+PEAK python + tesseract during that PDF:   280.8 MB
+workbook: 11 KB; python RSS now 210.3 MB

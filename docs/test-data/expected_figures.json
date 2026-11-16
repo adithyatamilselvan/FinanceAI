@@ -1,0 +1,105 @@
+{
+  "synthetic": true,
+  "currency": "INR",
+  "closing_balance_paise": 5373750,
+  "months": {
+    "2026-08": {
+      "income": 8500000,
+      "gross_expense": 5768600,
+      "refunds": 0,
+      "net_expense": 5768600,
+      "net_cash_flow": 2731400,
+      "savings_pct": 32.13,
+      "categories": {
+        "Housing": 2200000,
+        "Groceries": 798250,
+        "Loan Repayment": 650000,
+        "Other": 500000,
+        "Shopping": 344900,
+        "Utilities": 313800,
+        "Transport": 305700,
+        "Insurance": 185000,
+        "Food": 173950,
+        "Healthcare": 144200,
+        "Subscriptions": 76800,
+        "Entertainment": 76000
+      },
+      "income_categories": {
+        "Salary": 8500000
+      },
+      "fixed": 3425600,
+      "variable": 2343000,
+      "rows": 29,
+      "essential": 4291250
+    },
+    "2026-09": {
+      "income": 11941200,
+      "gross_expense": 5497525,
+      "refunds": 129900,
+      "net_expense": 5367625,
+      "net_cash_flow": 6573575,
+      "savings_pct": 55.05,
+      "categories": {
+        "Housing": 2200000,
+        "Groceries": 805975,
+        "Loan Repayment": 650000,
+        "Transport": 316300,
+        "Other": 300000,
+        "Utilities": 291300,
+        "Food": 262750,
+        "Insurance": 185000,
+        "Shopping": 134000,
+        "Entertainment": 84000,
+        "Subscriptions": 76800,
+        "Healthcare": 61500
+      },
+      "income_categories": {
+        "Salary": 8500000,
+        "Other Income": 2200000,
+        "Business Income": 1200000,
+        "Interest": 41200
+      },
+      "fixed": 3403100,
+      "variable": 1964525,
+      "rows": 34,
+      "essential": 4193775
+    },
+    "2026-10": {
+      "income": 8500000,
+      "gross_expense": 15696225,
+      "refunds": 0,
+      "net_expense": 15696225,
+      "net_cash_flow": -7196225,
+      "savings_pct": -84.66,
+      "categories": {
+        "Shopping": 6800500,
+        "Housing": 2200000,
+        "Travel": 1850000,
+        "Healthcare": 1052000,
+        "Food": 889300,
+        "Groceries": 869725,
+        "Loan Repayment": 650000,
+        "Other": 400000,
+        "Utilities": 350800,
+        "Transport": 303100,
+        "Insurance": 185000,
+        "Subscriptions": 76800,
+        "Entertainment": 69000
+      },
+      "income_categories": {
+        "Salary": 8500000
+      },
+      "fixed": 3462600,
+      "variable": 12233625,
+      "rows": 32,
+      "essential": 5307525
+    }
+  },
+  "row_count": 95,
+  "type_counts": {
+    "income": 6,
+    "expense": 80,
+    "refund": 1,
+    "transfer": 8
+  }
+}
